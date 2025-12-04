@@ -1,0 +1,34 @@
+name: Limpar arquivos .md soltos na raiz
+
+on:
+  push:
+    paths:
+      - '**/*.md'              # roda sempre que alguém der push em qualquer .md
+  workflow_dispatch:         # permite rodar manualmente também
+
+jobs:
+  delete-root-md:
+    runs-on: ubuntu-latest
+    if: github.repository == 'SEU_USUARIO/SEU_REPOSITORIO'  # troque aqui
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove todos .md que não estão em _posts/
+        run: |
+          find . -maxdepth 1 -name "*.md" -type f -not -name "README.md" -print0 | xargs -0 -r git rm --cached
+          find . -maxdepth 1 -name "*.md" -type f -not -name "README.md" -delete || true
+
+      - name: Commit e push da limpeza (se houver mudança)
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "Nenhum .md solto encontrado na raiz. Tudo limpo!"
+          else
+            git commit -m "chore: remove arquivos .md soltos da raiz (ação automática)"
+            git push
+          fi
