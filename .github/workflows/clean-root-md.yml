@@ -9,7 +9,7 @@ on:
 jobs:
   delete-root-md:
     runs-on: ubuntu-latest
-    if: github.repository == 'SEU_USUARIO/SEU_REPOSITORIO'  # troque aqui
+    if: github.repository == 'atendedigital/cmdy'  # troque aqui
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
