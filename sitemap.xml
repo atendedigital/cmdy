@@ -33,10 +33,13 @@ sitemap: false
     {% endif %}
   {% endfor %}
 
-  <!-- Todos os posts (antigos e novos) -->
-  {% for post in site.posts %}
+  <!-- Todos os posts JÁ PUBLICADOS ou com data de hoje ou anterior -->
+{% assign now = site.time | date: '%s' %}
+{% for post in site.posts %}
+  {% assign post_date = post.date | date: '%s' %}
+  {% if post_date <= now %}
   <url>
-    <loc>{{ site.url | default: "https://seusite.com.br" }}{{ post.url }}</loc>
+    <loc>{{ site.url }}{{ post.url }}</loc>
     {% if post.last_modified_at %}
       <lastmod>{{ post.last_modified_at | date_to_xmlschema }}</lastmod>
     {% else %}
@@ -45,6 +48,7 @@ sitemap: false
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  {% endfor %}
+  {% endif %}
+{% endfor %}
 
 </urlset>
