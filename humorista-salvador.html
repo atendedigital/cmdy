@@ -1,200 +1,570 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Humorista para Empresas em Salvador | Comediante Corporativo e Stand Up na Bahia</title>
-    <meta name="description" content="Contrate humorista para empresas em Salvador, BA. Comediante stand up corporativo, palestrante humorístico para eventos empresariais, SIPAT, confraternizações e treinamentos. Portfólio com Nestlé, Petrobras, SENAI e mais. Orçamento rápido via WhatsApp!">
-    <meta name="keywords" content="humorista para empresas Salvador, comediante corporativo Salvador, stand up empresas Bahia, palestrante humorístico Salvador, humorista eventos corporativos BA, comediante stand up Salvador, SIPAT Salvador, humor para empresas Bahia">
-    <!-- Open Graph para redes sociais -->
-    <meta property="og:title" content="Humorista para Empresas em Salvador | Stand Up Corporativo">
-    <meta property="og:description" content="Leve diversão e engajamento para sua empresa em Salvador com comediante profissional. Shows personalizados, limpos e impactantes.">
-    <meta property="og:image" content="./images/logo.png"> <!-- Troque pela imagem principal -->
-    <meta property="og:url" content="https://seusite.com/humorista-empresas-salvador">
-    <!-- Favicon e mais (adicione se quiser) -->
-    <link rel="canonical" href="https://seusite.com/humorista-empresas-salvador">
-    <!-- Seu CSS original aqui -->
-    <style>
-        /* Seu CSS vai aqui ou link externo */
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humorista para Empresas em Salvador | Comediante Corporativo e Stand Up na Bahia</title>
+<meta name="description" content="Contrate humorista para empresas em Salvador, BA. Comediante stand up corporativo, palestrante humorístico para eventos empresariais, SIPAT, confraternizações e treinamentos. Portfólio com Nestlé, Petrobras, SENAI e mais. Orçamento rápido via WhatsApp!">
+<meta name="keywords" content="humorista para empresas Salvador, comediante corporativo Salvador, stand up empresas Bahia, palestrante humorístico Salvador, humorista eventos corporativos BA, comediante stand up Salvador, SIPAT Salvador, humor para empresas Bahia">
+<meta property="og:title" content="Humorista para Empresas em Salvador | Stand Up Corporativo">
+<meta property="og:description" content="Leve diversão e engajamento para sua empresa em Salvador com comediante profissional. Shows personalizados, limpos e impactantes.">
+<meta property="og:image" content="./images/logo.png">
+<meta property="og:url" content="https://seusite.com/humorista-empresas-salvador">
+<link rel="canonical" href="https://seusite.com/humorista-empresas-salvador">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4A017;
+    --gold-light: #F0C040;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --white: #F5F0E8;
+    --gray: #888;
+    --green: #1DB954;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 5vw;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(4px);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo img { height: 32px; }
+  .nav-logo span { color: var(--white); font-size: 13px; font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: 0.5px; }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* Mobile menu */
+  .menu-button {
+    display: none;
+    background: none; border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white); font-size: 20px;
+    padding: 6px 12px; cursor: pointer; border-radius: 2px;
+  }
+  .menu-overlay {
+    display: none; position: fixed; inset: 0; z-index: 98;
+    background: rgba(0,0,0,0.5);
+  }
+  .menu-dropdown {
+    display: none; position: fixed; top: 60px; right: 5vw; z-index: 99;
+    background: var(--dark2); border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 4px; padding: 20px; min-width: 220px;
+  }
+  .menu-dropdown.active { display: block; }
+  .menu-dropdown h4 { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin: 14px 0 8px; }
+  .menu-dropdown h4:first-child { margin-top: 0; }
+  .menu-dropdown a { display: block; color: rgba(245,240,232,0.7); text-decoration: none; font-size: 14px; padding: 5px 0; transition: color 0.2s; }
+  .menu-dropdown a:hover { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .menu-button { display: block; }
+    .nav-cta { display: none; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 0 5vw;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(212,160,23,0.10) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(212,160,23,0.05) 0%, transparent 60%);
+  }
+  .hero-spotlight {
+    position: absolute; top: -20%; right: 10%;
+    width: 500px; height: 900px;
+    background: conic-gradient(from 170deg at 50% 0%, rgba(212,160,23,0.18) 0deg, transparent 40deg);
+    transform-origin: top center;
+    animation: sway 6s ease-in-out infinite alternate;
+  }
+  @keyframes sway {
+    from { transform: rotate(-4deg); }
+    to   { transform: rotate(4deg); }
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 820px; padding-top: 80px;
+  }
+  .hero-eyebrow {
+    font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.94; letter-spacing: 1px;
+    margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-title em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic; color: var(--gold);
+    display: block;
+    font-size: clamp(44px, 7.5vw, 92px);
+  }
+  .hero-sub {
+    font-size: clamp(15px, 1.8vw, 17px); font-weight: 300;
+    color: rgba(245,240,232,0.7); max-width: 580px;
+    line-height: 1.75; margin-bottom: 44px;
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--black);
+    text-decoration: none; font-weight: 500; font-size: 15px;
+    padding: 16px 36px; border-radius: 2px; letter-spacing: 0.5px;
+    transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,160,23,0.3); }
+  .btn-ghost {
+    color: var(--white); text-decoration: none; font-size: 15px;
+    padding: 16px 36px; border: 1px solid rgba(245,240,232,0.25);
+    border-radius: 2px; transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .scroll-hint {
+    position: absolute; bottom: 36px; left: 5vw;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gray);
+    opacity: 0; animation: fadeUp 1s 1.2s forwards;
+  }
+  .scroll-hint::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+
+  /* ── CLIENTS ── */
+  .clients {
+    padding: 60px 5vw;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: var(--dark);
+  }
+  .clients-label {
+    text-align: center; font-size: 11px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 36px;
+  }
+  .clients-grid {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 32px 56px;
+  }
+  .client-badge {
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+    letter-spacing: 2px; color: rgba(245,240,232,0.35);
+    transition: color 0.3s; cursor: default;
+  }
+  .client-badge:hover { color: var(--gold); }
+  .client-logo-img {
+    height: 36px; filter: grayscale(1) brightness(0.5); transition: filter 0.3s;
+  }
+  .client-logo-img:hover { filter: grayscale(0) brightness(1); }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 5vw; }
+  .section-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: 1; letter-spacing: 1px; margin-bottom: 20px;
+  }
+  .section-title em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic; color: var(--gold);
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--black); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; margin-top: 60px;
+  }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+
+  .service-card {
+    padding: 48px 32px; background: var(--dark2);
+    transition: background 0.3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+  }
+  .service-card:hover { background: #1C1C1C; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card img { width: 48px; height: 48px; margin-bottom: 20px; opacity: 0.7; }
+  .service-card-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+    letter-spacing: 1px; margin-bottom: 12px; color: var(--white);
+  }
+  .service-card-text {
+    font-size: 14px; font-weight: 300;
+    color: rgba(245,240,232,0.6); line-height: 1.65;
+  }
+
+  /* ── WHY ── */
+  .why { background: var(--dark); }
+  .why-inner {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px 60px; max-width: 1100px; margin-top: 60px;
+  }
+  @media (max-width: 768px) { .why-inner { grid-template-columns: 1fr; gap: 50px; } }
+
+  .why-item {}
+  .why-number {
+    font-family: 'Bebas Neue', sans-serif; font-size: 80px; line-height: 1;
+    color: rgba(212,160,23,0.12); margin-bottom: -20px;
+  }
+  .why-heading {
+    font-family: 'DM Serif Display', serif; font-size: 20px;
+    color: var(--white); margin-bottom: 12px;
+  }
+  .why-text {
+    font-size: 15px; font-weight: 300;
+    color: rgba(245,240,232,0.65); line-height: 1.75;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--black); }
+  .faq-list { max-width: 800px; margin-top: 50px; }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 32px 0;
+  }
+  .faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+  .faq-q {
+    font-family: 'DM Serif Display', serif; font-size: 19px;
+    color: var(--white); margin-bottom: 14px;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+  }
+  .faq-q::after { content: '+'; color: var(--gold); font-family: 'Bebas Neue', sans-serif; font-size: 28px; flex-shrink: 0; }
+  .faq-a {
+    font-size: 15px; font-weight: 300;
+    color: rgba(245,240,232,0.65); line-height: 1.75;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: var(--dark); text-align: center; padding: 120px 5vw;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-section .section-title { font-size: clamp(40px, 7vw, 90px); margin-bottom: 24px; }
+  .cta-sub {
+    font-size: 16px; font-weight: 300;
+    color: rgba(245,240,232,0.6); max-width: 480px;
+    margin: 0 auto 44px; line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 5vw;
+  }
+  .footer-inner {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    flex-wrap: wrap; gap: 32px; margin-bottom: 32px;
+  }
+  .footer-col h4 {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-col ul li a {
+    text-decoration: none; font-size: 14px;
+    color: rgba(245,240,232,0.5); transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+    letter-spacing: 2px; color: var(--gold);
+  }
+  .footer-copy {
+    font-size: 12px; color: rgba(136,136,136,0.5);
+    text-align: center; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ── FLOATING WHATSAPP ── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    background: var(--green); color: #fff; text-decoration: none;
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; box-shadow: 0 4px 24px rgba(29,185,84,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(29,185,84,0.5); }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 5vw; }
+    .hero-content { padding-top: 100px; }
+    section { padding: 70px 5vw; }
+  }
+</style>
 </head>
 <body>
 
-    <div class="yeo-slogan">
-        <div class="container yeo-header">
-            <div class="columns">
-                <div class="column col-12">
-                    <header class="navbar">
-                        <section class="navbar-section">
-                            <a class="navbar-brand logo" href="./">
-                                <img class="logo-img" src="./images/logo.png" alt="Humorista para Empresas em Salvador - Comediante Corporativo">
-                                <span style="font-size:12px;">Humorista & Comediante para Empresas</span>
-                            </a>
-                        </section>
-                        <!-- Seu menu mobile (mantido e adaptado) -->
-                        <button class="menu-button" onclick="toggleMenu()" style="display:none;">☰</button>
-                        <div class="menu-overlay" onclick="toggleMenu()"></div>
-                        <div class="menu-dropdown" id="menu" style="display:none;">
-                            <h4>Serviços em Salvador</h4>
-                            <a href="#contratar">Contratar Humorista</a>
-                            <a href="#servicos">Stand Up Corporativo</a>
-                            <a href="#portfolio">Portfólio Empresas</a>
-                            <h4>Contato</h4>
-                            <a href="https://wa.me/5511911894023?text=Quero%20or%C3%A7amento%20humorista%20empresas%20Salvador">WhatsApp</a>
-                            <a href="https://instagram.com/comedianteparaeventos">Instagram</a>
-                        </div>
-                        <script>
-                            function toggleMenu() {
-                                var menu = document.getElementById("menu");
-                                var overlay = document.querySelector(".menu-overlay");
-                                if (menu.classList.contains("active")) {
-                                    menu.classList.remove("active");
-                                    overlay.style.display = "none";
-                                } else {
-                                    menu.classList.add("active");
-                                    overlay.style.display = "block";
-                                }
-                            }
-                        </script>
-                        <section class="navbar-section">
-                            <a class="btn btn-primary btn-hire-me" href="https://wa.me/5511911894023?text=Or%C3%A7amento%20humorista%20para%20empresas%20em%20Salvador">Orçamento Grátis</a>
-                        </section>
-                    </header>
-                </div>
-            </div>
-        </div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="./">
+    <img src="./images/logo.png" alt="Humorista para Empresas em Salvador">
+    <span>Humorista &amp; Comediante para Empresas</span>
+  </a>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+  <div class="menu-dropdown" id="menu">
+    <h4>Serviços em Salvador</h4>
+    <a href="#contratar">Contratar Humorista</a>
+    <a href="#servicos">Stand Up Corporativo</a>
+    <a href="#portfolio">Portfólio Empresas</a>
+    <h4>Contato</h4>
+    <a href="https://wa.me/5511911894023?text=Quero%20or%C3%A7amento%20humorista%20empresas%20Salvador" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/comedianteparaeventos" target="_blank">Instagram</a>
+  </div>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      var overlay = document.querySelector(".menu-overlay");
+      if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+        overlay.style.display = "none";
+      } else {
+        menu.classList.add("active");
+        overlay.style.display = "block";
+      }
+    }
+  </script>
+  <a class="nav-cta" href="https://wa.me/5511911894023?text=Or%C3%A7amento%20humorista%20para%20empresas%20em%20Salvador" target="_blank">Orçamento Grátis</a>
+</nav>
 
-        <div class="container slogan">
-            <div class="columns">
-                <div class="column col-7 col-sm-12">
-                    <div class="slogan-content">
-                        <h1>Humorista para Empresas em Salvador: Stand Up Corporativo que Engaja e Diverte!</h1>
-                        <p>Contrate um comediante profissional especializado em eventos corporativos na Bahia. Shows personalizados, limpos e sob medida para sua empresa em Salvador. Ideal para confraternizações, SIPAT, treinamentos, aniversários de empresa e palestras motivacionais com humor. Portfólio comprovado com gigantes como Nestlé, Petrobras, Coelba, SENAI e mais.</p>
-                        <a class="btn btn-primary btn-lg" href="https://wa.me/5511911894023?text=Quero%20contratar%20humorista%20corporativo%20Salvador">Solicite Orçamento Agora</a>
-                    </div>
-                </div>
-                <div class="column col-5 hide-sm">
-                    <!-- Adicione uma imagem sua ou de show corporativo aqui -->
-                    <!-- <img class="slogan-img" src="./images/comediante-salvador.jpg" alt="Comediante stand up em evento corporativo Salvador"> -->
-                </div>
-            </div>
-        </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-spotlight"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Humorista Corporativo • Salvador & Bahia</p>
+    <h1 class="hero-title">
+      Humorista para
+      <em>Empresas</em>
+      em Salvador
+    </h1>
+    <p class="hero-sub">
+      Stand Up corporativo que engaja, diverte e fortalece times. Shows personalizados, limpos e sob medida para confraternizações, SIPAT, treinamentos e convenções em Salvador. Portfólio comprovado com Nestlé, Petrobras, Coelba, SENAI e mais.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://wa.me/5511911894023?text=Quero%20contratar%20humorista%20corporativo%20Salvador" target="_blank">
+        🎤 Solicitar Orçamento
+      </a>
+      <a class="btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Role para baixo</div>
+</div>
 
-        <div class="yeo-client" style="border-bottom:solid 1px #EEA; background:none;">
-            <div class="container yeo-client-list">
-                <div class="columns">
-                    <div class="column col-12">
-                        <h2 class="feature-title">Empresas que Já Confiaram no Nosso Humor em Salvador e Brasil</h2>
-                        <div class="client-logo">
-                            <a href="https://www.nestle.com.br/" target="_blank">
-                                <img src="./images/logos/1.jpg" height="50" alt="Nestlé - Humorista para evento corporativo">
-                            </a>
-                            <a href="https://petrobras.com.br/" target="_blank">
-                                <img src="./images/logos/petrobras.png" height="50" alt="Petrobras - Comediante stand up empresas">
-                            </a>
-                            <a href="https://www.bayer.com.br/" target="_blank">
-                                <img src="./images/logos/2.jpg" height="50" alt="Bayer - Palestrante humorístico Bahia">
-                            </a>
-                            <a href="https://www.senai.br/" target="_blank">
-                                <img src="./images/logos/3.jpg" height="50" alt="SENAI - Humor para SIPAT e treinamentos">
-                            </a>
-                            <a href="#" target="_blank">
-                                <img src="./images/logos/4.jpg" height="50" alt="Eventos corporativos com humorista Salvador">
-                            </a>
-                            <a href="#" target="_blank">
-                                <img src="./images/logos/Ferreira.jpg" height="50" alt="Humorista para empresas na Bahia">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- CLIENTS -->
+<div class="clients" id="portfolio">
+  <p class="clients-label">Empresas que já confiaram no nosso humor em Salvador e Brasil</p>
+  <div class="clients-grid">
+    <!-- Substitua por <img class="client-logo-img"> quando tiver os arquivos -->
+    <span class="client-badge">Nestlé</span>
+    <span class="client-badge">Petrobras</span>
+    <span class="client-badge">Bayer</span>
+    <span class="client-badge">SENAI</span>
+    <span class="client-badge">Coelba</span>
+    <span class="client-badge">Ferreira Costa</span>
+  </div>
+</div>
 
-        <div class="yeo-do" id="servicos">
-            <div class="container">
-                <div class="columns">
-                    <div class="column col-12">
-                        <h2>O que Oferecemos como Humorista para Empresas em Salvador</h2>
-                    </div>
-                    <div class="column col-4 col-sm-12">
-                        <div class="yeo-do-content">
-                            <img src="./images/what-we-do-1.svg" alt="Humor personalizado para convidados em eventos corporativos Salvador">
-                            <h3>Humor Personalizado e Respeitoso</h3>
-                            <p>Conhecemos o perfil da sua equipe em Salvador: histórias, bordões internos, hobbies e homenagens. Tudo vira piada leve que emociona e diverte, sem ofensas.</p>
-                        </div>
-                    </div>
-                    <div class="column col-4 col-sm-12">
-                        <div class="yeo-do-content">
-                            <img src="./images/what-we-do-2.svg" alt="Palestras com temas de segurança e responsabilidade em empresas Bahia">
-                            <h3>Temas Corporativos com Humor</h3>
-                            <p>Integramos segurança no trabalho, uso de EPIs, compliance, motivação e cultura empresarial. Perfeito para SIPAT, treinamentos e convenções em Salvador.</p>
-                        </div>
-                    </div>
-                    <div class="column col-4 col-sm-12">
-                        <div class="yeo-do-content">
-                            <img src="./images/what-we-do-3.svg" alt="Comediante stand up disponível em Salvador e toda Bahia">
-                            <h3>Atendimento Rápido em Salvador e Região Metropolitana</h3>
-                            <p>Shows em hotéis, centros de convenções, empresas na Barra, Pituba, Caminho das Árvores e mais. Disponibilidade para eventos presenciais e híbridos na Bahia.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <p class="section-label">O que oferecemos</p>
+  <h2 class="section-title">Humorista para <em>empresas</em><br>em Salvador</h2>
 
-        <div class="yeo-work" id="por-que-contratar" style="background:black; color:white;">
-            <div class="container">
-                <h2>Por Que Contratar um Humorista Corporativo em Salvador?</h2>
-                <div class="column col-10 centered">
-                    <p>O humor transforma eventos corporativos: reduz estresse, melhora o clima organizacional e fortalece laços entre equipes. Em Salvador, onde o dia a dia empresarial é intenso, um show de stand up personalizado faz toda a diferença.</p>
-                    <ul>
-                        <li><b>Exclusividade total:</b> Roteiro 100% feito para sua empresa, sem piadas genéricas.</li>
-                        <li><b>Engajamento máximo:</b> Público ri junto, participa e sai falando do evento.</li>
-                        <li><b>Valorização da marca:</b> Funcionários e clientes lembram positivamente da empresa.</li>
-                        <li><b>Homenagens emocionantes:</b> Aniversariantes do mês, promoções e histórias viram piadas carinhosas.</li>
-                        <li><b>Limpo e profissional:</b> Sem palavrão, sem polêmicas – ideal para qualquer público corporativo.</li>
-                    </ul>
-                    <br>
-                    <a href="https://wa.me/5511911894023?text=Quero%20or%C3%A7amento%20para%20humorista%20empresas%20Salvador" style="border-radius:20px; background:green; border:none; font-size:35px; padding:15px 40px; color:#fff; text-decoration:none;">Peça Orçamento Gratuito Agora!</a>
-                </div>
-            </div>
-        </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="./images/what-we-do-1.svg" alt="Humor personalizado para eventos corporativos Salvador">
+      <div class="service-card-title">Humor Personalizado e Respeitoso</div>
+      <p class="service-card-text">Conhecemos o perfil da sua equipe em Salvador: histórias, bordões internos, hobbies e homenagens. Tudo vira piada leve que emociona e diverte, sem ofensas.</p>
+    </div>
+    <div class="service-card">
+      <img src="./images/what-we-do-2.svg" alt="Palestras com temas corporativos e segurança Bahia">
+      <div class="service-card-title">Temas Corporativos com Humor</div>
+      <p class="service-card-text">Integramos segurança no trabalho, uso de EPIs, compliance, motivação e cultura empresarial. Perfeito para SIPAT, treinamentos e convenções em Salvador.</p>
+    </div>
+    <div class="service-card">
+      <img src="./images/what-we-do-3.svg" alt="Comediante stand up disponível em Salvador e toda Bahia">
+      <div class="service-card-title">Atendimento em Salvador e Região</div>
+      <p class="service-card-text">Shows em hotéis, centros de convenções, empresas na Barra, Pituba, Caminho das Árvores e mais. Disponível para eventos presenciais e híbridos em toda a Bahia.</p>
+    </div>
+  </div>
+</section>
 
-        <!-- Nova seção FAQ para SEO -->
-        <div class="container" style="padding:40px 0;">
-            <h2>Perguntas Frequentes sobre Humorista para Empresas em Salvador</h2>
-            <h3>Quanto custa contratar um comediante corporativo em Salvador?</h3>
-            <p>Valores a partir de R$ 1.200 para shows simples (de até 30 min). Shows mais longos e personalizados com roteiro sob medida variam de R$ 2.500 a R$ 6.000, dependendo de deslocamento, duração e complexidade.</p>
-            <h3>O humor é adequado para todos os públicos empresariais?</h3>
-            <p>Sim! Textos limpos, adaptados ao perfil da empresa. Já fizemos para indústrias, bancos, construtoras, varejo e órgãos públicos na Bahia.</p>
-            <h3>Atendem só Salvador ou toda a Bahia?</h3>
-            <p>Foco principal em Salvador e RMS, mas realizamos eventos em Feira de Santana, Camaçari, Lauro de Freitas e outras cidades com combinado de logística.</p>
-        </div>
+<!-- WHY -->
+<section class="why" id="por-que-contratar">
+  <p class="section-label">Os benefícios</p>
+  <h2 class="section-title">Por que contratar um<br>humorista <em>corporativo?</em></h2>
 
-        <!-- Footer adaptado -->
-        <div class="yeo-footer">
-            <div class="container">
-                <div class="columns">
-                    <div class="column col-3 col-sm-6">
-                        <h4>Serviços</h4>
-                        <ul>
-                            <li><a href="#servicos">Humorista Corporativo</a></li>
-                            <li><a href="#servicos">Stand Up para Empresas</a></li>
-                            <li><a href="#servicos">Palestrante com Humor</a></li>
-                        </ul>
-                    </div>
-                    <div class="column col-3 col-sm-6">
-                        <h4>Contato</h4>
-                        <ul>
-                            <li><a href="https://wa.me/5511911894023">WhatsApp</a></li>
-                            <li><a href="https://instagram.com/comedianteparaeventos">Instagram</a></li>
-                        </ul>
-                    </div>
-                    <div class="column col-3 col-sm-6">
-                        <h4>© 2026 - Humorista para Empresas Salvador</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="why-inner">
+    <div class="why-item">
+      <div class="why-number">01</div>
+      <h3 class="why-heading">🎭 Exclusividade Total</h3>
+      <p class="why-text">Roteiro 100% criado para sua empresa, sem piadas genéricas ou cópias. O humor nasce das histórias reais da sua equipe — e isso o público sente na hora.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">02</div>
+      <h3 class="why-heading">🎉 Engajamento Máximo</h3>
+      <p class="why-text">Público ri junto, participa e sai falando do evento por semanas. O humor reduz estresse, melhora o clima organizacional e fortalece laços entre equipes.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">03</div>
+      <h3 class="why-heading">📈 Valorização da Marca</h3>
+      <p class="why-text">Funcionários e clientes lembram positivamente da empresa após um evento bem-humorado. Quem investe em experiência, colhe fidelidade e recomendação.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">04</div>
+      <h3 class="why-heading">👔 Homenagens Emocionantes</h3>
+      <p class="why-text">Aniversariantes do mês, promoções e histórias internas viram piadas carinhosas. Clean, profissional, sem palavrão — ideal para qualquer público corporativo.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">05</div>
+      <h3 class="why-heading">🏭 Segurança com Leveza</h3>
+      <p class="why-text">SIPAT e treinamentos ganham vida com humor educativo. Mensagens sobre EPIs e prevenção de acidentes são absorvidas com muito mais eficácia quando vêm acompanhadas de risadas.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-number">06</div>
+      <h3 class="why-heading">🌎 Alcance Nacional</h3>
+      <p class="why-text">Com parceiros em todo o Brasil, atendemos além de Salvador: Feira de Santana, Camaçari, Lauro de Freitas e qualquer outro estado com o profissional certo para seu orçamento.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:60px; text-align:center;">
+    <a class="btn-primary" href="https://wa.me/5511911894023?text=Quero%20or%C3%A7amento%20para%20humorista%20empresas%20Salvador" target="_blank">🎤 Peça Orçamento Gratuito</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <p class="section-label">Dúvidas frequentes</p>
+  <h2 class="section-title">Perguntas sobre<br>humorista para <em>empresas</em></h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Quanto custa contratar um comediante corporativo em Salvador?</div>
+      <p class="faq-a">Valores a partir de R$ 1.200 para shows simples de até 30 min. Shows mais longos e personalizados com roteiro sob medida variam de R$ 2.500 a R$ 6.000, dependendo de deslocamento, duração e complexidade do roteiro.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">O humor é adequado para todos os públicos empresariais?</div>
+      <p class="faq-a">Sim! O conteúdo é sempre limpo e adaptado ao perfil da empresa. Já realizamos shows para indústrias, bancos, construtoras, varejo e órgãos públicos na Bahia — sem palavrão e sem polêmica.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Atendem só Salvador ou toda a Bahia?</div>
+      <p class="faq-a">Foco principal em Salvador e Região Metropolitana, mas realizamos eventos em Feira de Santana, Camaçari, Lauro de Freitas e outras cidades mediante combinado de logística. Com nossa rede nacional, atendemos qualquer estado do Brasil.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Como funciona a personalização do roteiro?</div>
+      <p class="faq-a">Antes do evento, fazemos um briefing com você: coletamos informações sobre a equipe, histórias marcantes, bordões internos e pessoas a serem homenageadas. Tudo isso vira material para um roteiro exclusivo, feito do zero para o seu evento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contratar">
+  <p class="section-label">Pronto para o próximo passo?</p>
+  <h2 class="section-title">Sua empresa<br>merece <em>risos</em></h2>
+  <p class="cta-sub">Entre em contato agora, conte sobre seu evento corporativo e receba um orçamento sem compromisso.</p>
+  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <a class="btn-primary" href="https://wa.me/5511911894023?text=Or%C3%A7amento%20humorista%20para%20empresas%20em%20Salvador" target="_blank">🎤 Orçamento pelo WhatsApp</a>
+    <a class="btn-ghost" href="https://mailchi.mp/886e15e05897/comediante" target="_blank">📋 Formulário de Orçamento</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Humorista Salvador</div>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#servicos">Humorista Corporativo</a></li>
+        <li><a href="#servicos">Stand Up para Empresas</a></li>
+        <li><a href="#servicos">Palestrante com Humor</a></li>
+        <li><a href="#servicos">SIPAT e Treinamentos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5511911894023" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/comedianteparaeventos" target="_blank">Instagram</a></li>
+        <li><a href="https://mailchi.mp/886e15e05897/comediante" target="_blank">Formulário</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Humorista para Empresas Salvador — Bahia, Brasil</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/5511911894023?text=Quero%20contratar%20humorista%20para%20empresa%20Salvador" target="_blank" title="Orçamento pelo WhatsApp">💬</a>
 
 </body>
 </html>
